@@ -15,18 +15,21 @@ function drawCompleteHouse() {
     drawSide();
     
     drawWindow1();
-    drawLedge1();
     drawWindow2();
-    drawLedge2();
     drawWindow3();
-    drawLedge3();
     
     drawDoor();
     drawDoorKnob();
+    drawWalkWay();
     
     drawChimney();
     drawChimneySide();
     drawChimneyTop();
+    
+    drawFlowerPot();
+    drawFlower1();
+    drawFlower2();
+    drawFlower3();
 }
 
 function drawSky() {
@@ -50,7 +53,7 @@ function drawFront() {
     ctx.fill();
 }
 
-function drawRoof1() {
+function drawRoof1() { 
     ctx.beginPath();
     ctx.moveTo(45, 280);
     ctx.lineTo(235, 280);
@@ -86,6 +89,8 @@ function drawSide() {
 function drawWindow1() {
     ctx.beginPath();
     ctx.rect(80, 300, 50, 50);
+    ctx.closePath();
+    ctx.stroke();
     ctx.fillStyle = "#EDFEFF";
     ctx.fill();
 }
@@ -97,6 +102,7 @@ function drawWindow2() {
     ctx.lineTo(290, 340);
     ctx.lineTo(290, 290);
     ctx.closePath()
+    ctx.stroke();
     ctx.fillStyle = "#EDFEFF";
     ctx.fill();
 }
@@ -108,36 +114,8 @@ function drawWindow3() {
     ctx.lineTo(360, 325);
     ctx.lineTo(360, 275);
     ctx.closePath()
+    ctx.stroke();
     ctx.fillStyle = "#EDFEFF";
-    ctx.fill();
-}
-
-function drawLedge1() {
-    ctx.beginPath();
-    ctx.rect(75, 350, 60, 5);
-    ctx.fillStyle = "#472204";
-    ctx.fill();
-}
-
-function drawLedge2() {
-    ctx.beginPath();
-    ctx.moveTo(235, 350);
-    ctx.lineTo(235, 355);
-    ctx.lineTo(295, 343);
-    ctx.lineTo(295, 338);
-    ctx.closePath()
-    ctx.fillStyle = "#472204";
-    ctx.fill();
-}
-
-function drawLedge3() {
-    ctx.beginPath();
-    ctx.moveTo(305, 335);
-    ctx.lineTo(305, 340);
-    ctx.lineTo(365, 328);
-    ctx.lineTo(365, 323);
-    ctx.closePath()
-    ctx.fillStyle = "#472204";
     ctx.fill();
 }
 
@@ -158,7 +136,7 @@ function drawDoorKnob() {
     ctx.beginPath();
     ctx.arc(x, y, radius, startAngle, endAngle);
     ctx.fillStyle = "#EEE130";
-    ctx.fill();   
+    ctx.fill(); 
 }
 
 function drawChimney() { 
@@ -188,4 +166,234 @@ function drawChimneyTop() {
     ctx.closePath()
     ctx.fillStyle = "#220C08";
     ctx.fill();
+}
+
+function drawWalkWay() {
+    ctx.beginPath();
+    ctx.moveTo(145, 390);
+    ctx.lineTo(50, 450);
+    ctx.lineTo(105, 450);
+    ctx.lineTo(200, 390);
+    ctx.closePath();
+    ctx.fillStyle = "#616B67";
+    ctx.fill();
+}
+
+function drawFlowerPot() {
+    ctx.beginPath();
+    ctx.moveTo(75, 380);
+    ctx.lineTo(80, 390);
+    ctx.lineTo(130, 390);
+    ctx.lineTo(135, 380);
+    ctx.closePath();
+    ctx.stroke();
+    ctx.fillStyle = "#6B310B";
+    ctx.fill();
+}
+
+function drawFlower1() {
+    var a = 81;
+    var b = 362;
+    var radius = 3;
+    var startAngle = 0;
+    var endAngle = 2 * Math.PI;
+    ctx.beginPath();
+    ctx.arc(a, b, radius, startAngle, endAngle);
+    ctx.fillStyle = "#10B4AD";
+    ctx.fill();
+    
+    var c = 85;
+    var d = 359;
+    var radius = 3;
+    var startAngle = 0;
+    var endAngle = 2 * Math.PI;
+    ctx.beginPath();
+    ctx.arc(c, d, radius, startAngle, endAngle);
+    ctx.fillStyle = "#10B4AD";
+    ctx.fill(); 
+    
+    var e = 89;
+    var f = 362;
+    var radius = 3;
+    var startAngle = 0;
+    var endAngle = 2 * Math.PI;
+    ctx.beginPath();
+    ctx.arc(e, f, radius, startAngle, endAngle);
+    ctx.fillStyle = "#10B4AD";
+    ctx.fill(); 
+    
+    var g = 87;
+    var h = 367;
+    var radius = 3;
+    var startAngle = 0;
+    var endAngle = 2 * Math.PI;
+    ctx.beginPath();
+    ctx.arc(g, h, radius, startAngle, endAngle);
+    ctx.fillStyle = "#10B4AD";
+    ctx.fill(); 
+    
+    var i = 83;
+    var j = 367;
+    var radius = 3;
+    var startAngle = 0;
+    var endAngle = 2 * Math.PI;
+    ctx.beginPath();
+    ctx.arc(i, j, radius, startAngle, endAngle);
+    ctx.fillStyle = "#10B4AD";
+    ctx.fill(); 
+    
+    var k = 85;
+    var l = 363;
+    var radius = 2;
+    var startAngle = 0;
+    var endAngle = 2 * Math.PI;
+    ctx.beginPath();
+    ctx.arc(k, l, radius, startAngle, endAngle);
+    ctx.fillStyle = "#ECEC33";
+    ctx.fill(); 
+    
+    ctx.beginPath();
+    ctx.moveTo(85, 370);
+    ctx.lineTo(85, 380);
+    ctx.closePath();
+    ctx.strokeStyle = "#23681B";
+    ctx.stroke();
+}
+
+function drawFlower2() {
+    var a = 101;
+    var b = 362;
+    var radius = 3;
+    var startAngle = 0;
+    var endAngle = 2 * Math.PI;
+    ctx.beginPath();
+    ctx.arc(a, b, radius, startAngle, endAngle);
+    ctx.fillStyle = "#F18A1B";
+    ctx.fill();
+    
+    var c = 105;
+    var d = 359;
+    var radius = 3;
+    var startAngle = 0;
+    var endAngle = 2 * Math.PI;
+    ctx.beginPath();
+    ctx.arc(c, d, radius, startAngle, endAngle);
+    ctx.fillStyle = "#F18A1B";
+    ctx.fill(); 
+    
+    var e = 109;
+    var f = 362;
+    var radius = 3;
+    var startAngle = 0;
+    var endAngle = 2 * Math.PI;
+    ctx.beginPath();
+    ctx.arc(e, f, radius, startAngle, endAngle);
+    ctx.fillStyle = "#F18A1B";
+    ctx.fill(); 
+    
+    var g = 107;
+    var h = 367;
+    var radius = 3;
+    var startAngle = 0;
+    var endAngle = 2 * Math.PI;
+    ctx.beginPath();
+    ctx.arc(g, h, radius, startAngle, endAngle);
+    ctx.fillStyle = "#F18A1B";
+    ctx.fill(); 
+    
+    var i = 103;
+    var j = 367;
+    var radius = 3;
+    var startAngle = 0;
+    var endAngle = 2 * Math.PI;
+    ctx.beginPath();
+    ctx.arc(i, j, radius, startAngle, endAngle);
+    ctx.fillStyle = "#F18A1B";
+    ctx.fill(); 
+    
+    var k = 105;
+    var l = 363;
+    var radius = 2;
+    var startAngle = 0;
+    var endAngle = 2 * Math.PI;
+    ctx.beginPath();
+    ctx.arc(k, l, radius, startAngle, endAngle);
+    ctx.fillStyle = "#ECEC33";
+    ctx.fill(); 
+    
+    ctx.beginPath();
+    ctx.moveTo(105, 370);
+    ctx.lineTo(105, 380);
+    ctx.closePath();
+    ctx.strokeStyle = "#23681B";
+    ctx.stroke();
+} 
+
+function drawFlower3() {
+    var a = 121;
+    var b = 362;
+    var radius = 3;
+    var startAngle = 0;
+    var endAngle = 2 * Math.PI;
+    ctx.beginPath();
+    ctx.arc(a, b, radius, startAngle, endAngle);
+    ctx.fillStyle = "#CE9CE8";
+    ctx.fill();
+    
+    var c = 125;
+    var d = 359;
+    var radius = 3;
+    var startAngle = 0;
+    var endAngle = 2 * Math.PI;
+    ctx.beginPath();
+    ctx.arc(c, d, radius, startAngle, endAngle);
+    ctx.fillStyle = "#CE9CE8";
+    ctx.fill(); 
+    
+    var e = 129;
+    var f = 362;
+    var radius = 3;
+    var startAngle = 0;
+    var endAngle = 2 * Math.PI;
+    ctx.beginPath();
+    ctx.arc(e, f, radius, startAngle, endAngle);
+    ctx.fillStyle = "#CE9CE8";
+    ctx.fill(); 
+    
+    var g = 127;
+    var h = 367;
+    var radius = 3;
+    var startAngle = 0;
+    var endAngle = 2 * Math.PI;
+    ctx.beginPath();
+    ctx.arc(g, h, radius, startAngle, endAngle);
+    ctx.fillStyle = "#CE9CE8";
+    ctx.fill(); 
+    
+    var i = 123;
+    var j = 367;
+    var radius = 3;
+    var startAngle = 0;
+    var endAngle = 2 * Math.PI;
+    ctx.beginPath();
+    ctx.arc(i, j, radius, startAngle, endAngle);
+    ctx.fillStyle = "#CE9CE8";
+    ctx.fill(); 
+    
+    var k = 125;
+    var l = 363;
+    var radius = 2;
+    var startAngle = 0;
+    var endAngle = 2 * Math.PI;
+    ctx.beginPath();
+    ctx.arc(k, l, radius, startAngle, endAngle);
+    ctx.fillStyle = "#ECEC33";
+    ctx.fill();
+    
+    ctx.beginPath();
+    ctx.moveTo(125, 370);
+    ctx.lineTo(125, 380);
+    ctx.closePath();
+    ctx.strokeStyle = "#23681B";
+    ctx.stroke();
 }
