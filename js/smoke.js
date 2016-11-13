@@ -32,10 +32,10 @@ window.onload = function(){
 		this.speed = {x: -2 + Math.random() * 5, y: -14 + Math.random() * 15};
 		
         //location
-		this.location = {x: canvas.width/2, y: canvas.height/2};
+		this.location = {x: 270, y: 120};
         
 		//range of radius
-		this.radius = 10 + Math.random() * 20;
+		this.radius = 7 + Math.random() * 15;
         
 		//range of the life
 		this.life = 20+Math.random()*10;
@@ -48,9 +48,12 @@ window.onload = function(){
 	}
 	
 	function draw() {
+        
 		ctx.globalCompositeOperation = "source-over";
 		ctx.fillStyle = "white";
         ctx.fillRect(0, 0, W, H);
+        drawSky();
+        
 		
 		for(var i = 0; i < particles.length; i++) {
 			var p = particles[i];
@@ -77,16 +80,18 @@ window.onload = function(){
 			//make particle when another one dies
 			if(p.remaining_life < 0 || p.radius < 0) {
 				particles[i] = new particle();
+            
 			}
 		}
+        drawCompleteHouse();
 	}
 	
-	setInterval(draw, 33);
+	setInterval(draw, 30);
 
-drawCompleteHouse();
+
 
 function drawCompleteHouse() {
-    drawSky();
+
     drawGround();
     
     drawFront();
