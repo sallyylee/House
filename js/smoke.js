@@ -49,7 +49,7 @@ window.onload = function(){
 	
 	function draw() {
 		ctx.globalCompositeOperation = "source-over";
-		canvas2d.fillStyle = "rgba(255, 255, 255, 0.5)";
+		ctx.fillStyle = "white";
         ctx.fillRect(0, 0, W, H);
 		
 		for(var i = 0; i < particles.length; i++) {
