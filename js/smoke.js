@@ -1,6 +1,21 @@
 window.onload = function(){
 	var canvas = document.getElementById("canvas");
 	var ctx = canvas.getContext("2d");
+    
+    var slider = document.getElementById("slider");
+
+    var sliderVar = 0; //variable to be controlled
+
+    var dispDiv = document.getElementById("dispDiv");
+
+    //Slider
+    slider.addEventListener("change", function() 
+    { 
+      sliderVar = slider.value;  
+    })
+    setInterval(function() {
+      sliderVar = slider.value;
+    }, 100)
 	
 
 	var W = window.innerWidth, H = window.innerHeight;
@@ -8,9 +23,8 @@ window.onload = function(){
 	canvas.height = 500;
 	
 	var particles = [];
-	var mouse = {};
 	
-	var particle_count = 100;
+	var particle_count = 75;
 	for(var i = 0; i < particle_count; i++)
 	{
 		particles.push(new particle());
@@ -63,7 +77,7 @@ window.onload = function(){
 			p.remaining_life--;
 			p.radius--;
 			p.location.x += p.speed.x;
-			p.location.y += p.speed.y;
+			p.location.y += p.speed.y - sliderVar/5;
 			
 			//make particle when another one dies
 			if(p.remaining_life < 0 || p.radius < 0)
