@@ -4,17 +4,18 @@ window.onload = function(){
     
     var slider = document.getElementById("slider");
 
-    var sliderVar = 0; //variable to be controlled
+    var sliderVar = 0; //variable  for smoke speed
+    var dayVar = 1; //variable for day  
 
     var dispDiv = document.getElementById("dispDiv");
 
     //Slider
-    slider.addEventListener("change", function() { 
-      sliderVar = slider.value;  
-    })
     setInterval(function() {
-      sliderVar = slider.value;
+        sliderVar = slider.value;
     }, 100)
+    
+
+    
 	
 	var W = window.innerWidth, H = window.innerHeight;
 	canvas.width = 500;
@@ -32,7 +33,7 @@ window.onload = function(){
 		this.speed = {x: -2 + Math.random() * 5, y: -14 + Math.random() * 15};
 		
         //location
-		this.location = {x: 270, y: 120};
+		this.location = {x:270, y: 120};
         
 		//range of radius
 		this.radius = 7 + Math.random() * 15;
@@ -48,12 +49,11 @@ window.onload = function(){
 	}
 	
 	function draw() {
-        
 		ctx.globalCompositeOperation = "source-over";
 		ctx.fillStyle = "white";
         ctx.fillRect(0, 0, W, H);
         drawSky();
-        
+
 		
 		for(var i = 0; i < particles.length; i++) {
 			var p = particles[i];
@@ -80,13 +80,14 @@ window.onload = function(){
 			//make particle when another one dies
 			if(p.remaining_life < 0 || p.radius < 0) {
 				particles[i] = new particle();
-            
 			}
+        
 		}
-        drawCompleteHouse();
+        
+       drawCompleteHouse();
 	}
 	
-	setInterval(draw, 30);
+	setInterval(draw, 33);
 
 
 
@@ -123,6 +124,12 @@ function drawSky() {
     ctx.beginPath();
     ctx.rect(0, 0, 500, 350);
     ctx.fillStyle = "#C1F4F8";
+    ctx.fill();
+}
+function drawSky2() {
+    ctx.beginPath();
+    ctx.rect(0, 0, 500, 350);
+    ctx.fillStyle = "#333";
     ctx.fill();
 }
 
